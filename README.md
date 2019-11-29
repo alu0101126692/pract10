@@ -1,5 +1,3 @@
-
-
 Title P8: Desarrollo Dirigido por Pruebas (TDD). 
 
 LPP ULL Curso 19/20 Autor: Pablo Torres Albertos
