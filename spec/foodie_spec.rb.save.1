@@ -1,4 +1,3 @@
-require 'foodie'
 
 RSpec.describe Foodie do
   	before(:all) do
@@ -106,8 +105,7 @@ RSpec.describe Listas do
                 @espgr = Listas.new()
 		@espgr.insert_head_var(500,200)
                 @espgr.insert_head_var(250,100)
-		
-		@platoesp = Subplato.new("Española",@ingesp,@espgr)
+		@platoesp = Plato.new("Española",@ingesp,@espgr)
 		
 		@ingvas = Listas.new()
                 @ingvas.insert_head_var(@cerdo,@chocolate)
@@ -115,8 +113,7 @@ RSpec.describe Listas do
                 @vasgr = Listas.new()
                 @vasgr.insert_head_var(400,350)
                 @vasgr.insert_head_var(100,100)
-                
-		@platovas = Subplato.new("Vasca",@ingvas,@vasgr)
+                @platovas = Plato.new("Vasca",@ingvas,@vasgr)
 		
 		@ingveg = Listas.new()
                 @ingveg.insert_head_var(@huevos,@queso)
@@ -124,8 +121,7 @@ RSpec.describe Listas do
                 @veggr = Listas.new()
                 @veggr.insert_head_var(200,200)
                 @veggr.insert_head_var(100,100)
-                
-		@platoveg = Subplato.new("Vegetaria",@ingveg,@veggr)
+                @platoveg = Plato.new("Vegetaria",@ingveg,@veggr)
 			
 		@ingveg2 = Listas.new()
                 @ingveg2.insert_head_var(@lentejas,@chocolate)
@@ -133,8 +129,7 @@ RSpec.describe Listas do
                 @veg2gr = Listas.new()
                 @veg2gr.insert_head_var(200,150)
                 @veg2gr.insert_head_var(100,100)
-                
-		@platoveg2 = Subplato.new("Vegetaliana",@ingveg2,@veg2gr)
+                @platoveg2 = Plato.new("Vegetaliana",@ingveg2,@veg2gr)
 		
 		@ingcar = Listas.new()
                 @ingcar.insert_head_var(@cerdo,@cordero)
@@ -142,8 +137,7 @@ RSpec.describe Listas do
                 @cargr = Listas.new()
                 @cargr.insert_head_var(250,200)
                 @cargr.insert_head_var(100,100)
-                
-		@platocar = Subplato.new("Carne",@ingcar,@cargr)
+                @platocar = Plato.new("Carne",@ingcar,@cargr)
 
 		@listaesp = Listas.new()
 		@ingesp2 = Listas.new()
@@ -152,8 +146,7 @@ RSpec.describe Listas do
                 @espgr2 = Listas.new()
                 @espgr2.insert_head_var(500,200)
                 @espgr2.insert_head_var(250,100)
-                
-		@platoesp2 = Subplato.new("Española",@ingesp,@espgr2)
+                @platoesp2 = Plato.new("Española",@ingesp,@espgr2)
 
 		@listaesp.insert_head_var(@platoesp,@platoesp2)
 		
@@ -164,9 +157,7 @@ RSpec.describe Listas do
                 @vasgr2 = Listas.new()
                 @vasgr2.insert_head_var(400,350)
                 @vasgr2.insert_head_var(100,100)
-                
-		@platovas2 = Subplato.new("Vasca",@ingvas2,@vasgr2)
-		
+                @platovas2 = Plato.new("Vasca",@ingvas2,@vasgr2)
 		@listavas.insert_head_var(@platovas,@platovas2)
 		@listaveg = Listas.new()
 		@ingveg2 = Listas.new()
@@ -175,8 +166,7 @@ RSpec.describe Listas do
                 @veggr2 = Listas.new()
                 @veggr2.insert_head_var(200,200)
                 @veggr2.insert_head_var(100,100)
-                
-		@platoveg3 = Subplato.new("Vegetaria",@ingveg2,@veggr2)
+                @platoveg3 = Plato.new("Vegetaria",@ingveg2,@veggr2)
 		
 		@listaveg.insert_head_var(@platoveg,@platoveg3)	
 		@listaveg2 = Listas.new()
@@ -186,8 +176,7 @@ RSpec.describe Listas do
                 @veg4gr = Listas.new()
                 @veg4gr.insert_head_var(200,150)
                 @veg4gr.insert_head_var(100,100)
-                
-		@platoveg2 = Subplato.new("Vegetaliana",@ingveg2,@veg2gr)
+                @platoveg2 = Plato.new("Vegetaliana",@ingveg2,@veg2gr)
 
 		@listaveg2.insert_head_var(@platoveg2,@platoveg4)
 
@@ -303,7 +292,19 @@ RSpec.describe Listas do
 		it "Se obtiene el plato formateado" do
 			expect(@plato1.to_s()).to eq("plato1,Alimentos: Nuez 1000 gr Queso 2500 gr ")
 		end
-		
+		it "Comparable" do
+			expect(@platoesp > @platoveg).to eq(true)
+			expect(@platovas == @platovas).to eq(true)
+			expect(@platoesp.between?(@platoveg2,@platocar)).to eq(false)
+			expect(@platocar.clamp(@platoveg2,@platoesp)).to eq(@platoveg2)
+		end
+		it "Enumerar listas de platos" do
+                        expect(@listaesp.collect { |i| i }).to eq([@platoesp2,@platoesp])
+                        expect(@listavas.select { |num| num > @platovas }).to eq ([])
+                        expect(@listaveg.max).to eq(@platoveg)
+                        expect(@listaveg.min).to eq(@platoveg3)
+                        expect(@listaveg.sort).to eq([@platoveg3,@platoveg])
+                end
 
 	end
 
@@ -334,20 +335,6 @@ RSpec.describe Listas do
 			expect(@subplato.respond_to?:terreno).to eq(true)
 			expect(@plato1.respond_to?:nombre).to eq(true)
 		end
-		it "Comparable" do
-                        expect(@platoesp > @platoveg).to eq(true)
-                        expect(@platovas == @platovas).to eq(true)
-                        expect(@platoesp.between?(@platoveg2,@platocar)).to eq(false)
-                        expect(@platocar.clamp(@platoveg2,@platoesp)).to eq(@platoveg2)
-                end
-                it "Enumerar listas de platos" do
-                        expect(@listaesp.collect { |i| i }).to eq([@platoesp2,@platoesp])
-                        expect(@listavas.select { |num| num > @platovas }).to eq([])
-                        expect(@listaveg.max).to eq(@platoveg)
-                        expect(@listaveg.min).to eq(@platoveg3)
-                        expect(@listaveg.sort).to eq([@platoveg3,@platoveg])
-                end
-
 	end
 end	
 
