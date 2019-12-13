@@ -396,6 +396,7 @@ RSpec.describe Listas do
 			menudiet2max = @menudiet2.max
 			expect(menudiet2max).to eq(@platoex)
 
+
 		end
 	end
 end	
