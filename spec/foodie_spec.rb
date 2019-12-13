@@ -205,6 +205,10 @@ RSpec.describe Listas do
 		@grex.insert_head_var(2000,2000)
 		
 		@platoex = Subplato.new("Platazo",@ingex,@grex) 
+		@menudiet2 = [@platovas,@platoex]
+		@menudietprice = [10,40]
+
+
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -392,10 +396,16 @@ RSpec.describe Listas do
  			expect(huellanut).to eq(1)
 		end
 		it "Pruebas para obtener huella nutricional max" do
-			@menudiet2 = [@platovas,@platoex]
 			menudiet2max = @menudiet2.max
 			expect(menudiet2max).to eq(@platoex)
 
+
+		end
+		it "Multiplicar precios" do
+			menudiet2max = @menudiet2.max
+			f = 0
+			price = @menudietprice.map {|n| n = n*menudiet2max.huella}
+			expect(price).to eq([20,80])
 
 		end
 	end
