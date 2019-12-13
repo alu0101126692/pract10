@@ -353,7 +353,7 @@ RSpec.describe Listas do
 	end
 	context "Practica 09" do
 		it "Se consigue la huella nutricional" do
-			expect(@platoesp.huella).to eq(2)
+			expect(@platoesp.huella).to eq(1)
 			expect(@platoesp2.huella).to eq(1)
 			vct = 0
 			emisiones = 0
@@ -377,7 +377,7 @@ RSpec.describe Listas do
                        		 indice2 = 2
                 	end
                		huellanut = (indice1+indice2)/2
- 			expect(huellanut).to eq(3)
+ 			expect(huellanut).to eq(1)
 		end
 	end
 end	

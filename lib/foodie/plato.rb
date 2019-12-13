@@ -102,7 +102,28 @@ attr_reader :gei, :terreno
 		string = "Gases " + @gei.to_s + " Uso de terreno anual " + @terreno.to_s
 	end
 
-	
+	def huella
+		indice1 = 0
+		if vct < 670
+			indice1 = 1
+			
+		elsif vct > 830
+			indice1 = 3
+		else 
+			indice1 = 2
+		end 
+		indice2 = 0
+		if emisiones < 800
+			indice2 = 1
+		elsif emisiones > 1200
+			indice2 = 3
+		else 
+			indice2 = 2
+		end
+		indiceres = (indice1+indice2)/2
+		
+
+	end	
 
 end
 
