@@ -403,9 +403,8 @@ RSpec.describe Listas do
 		end
 		it "Multiplicar precios" do
 			menudiet2max = @menudiet2.max
-			f = 0
-			price = @menudietprice.map {|n| n = n*menudiet2max.huella}
-			expect(price).to eq([20,80])
+			@menudietprice = @menudietprice.map {|n| n = n*menudiet2max.huella}
+			expect(@menudietprice).to eq([20,80])
 
 		end
 	end
