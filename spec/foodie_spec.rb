@@ -193,6 +193,18 @@ RSpec.describe Listas do
 		
 		
 		@menudiet = [@platoesp,@platoesp2]
+		@ingex = Listas.new()
+		@ingex.insert_head_var(@lentejas,@chocolate)
+                @ingex.insert_head_var(@nuez,@cafe)
+		@ingex.insert_head_var(@cerdo,@cordero)
+                @ingex.insert_head_var(@lentejas,@leche)
+		@grex = Listas.new()
+		@grex.insert_head_var(5000,5000)
+		@grex.insert_head_var(5000,5000)
+		@grex.insert_head_var(2000,2000)
+		@grex.insert_head_var(2000,2000)
+		
+		@platoex = Subplato.new("Platazo",@ingex,@grex) 
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -378,6 +390,12 @@ RSpec.describe Listas do
                 	end
                		huellanut = (indice1+indice2)/2
  			expect(huellanut).to eq(1)
+		end
+		it "Pruebas para obtener huella nutricional max" do
+			@menudiet2 = [@platovas,@platoex]
+			menudiet2max = @menudiet2.max
+			expect(menudiet2max).to eq(@platoex)
+
 		end
 	end
 end	
