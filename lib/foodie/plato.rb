@@ -2,12 +2,13 @@ class Plato
 include Comparable
 include Enumerable
 	attr_reader :nombre, :lista, :listagr
-
+	#Inicializa el plato con tres argumentos: El nombre del plato, la lista de alimentos y la lista del peso de estos alimentos
 	def initialize (nombre,lista,listagr) 
 		@nombre = nombre
 		@lista = lista
 		@listagr = listagr
 	end
+	#Devuelve el porcentaje de proteinas de los alimentos en la lista
 	def prot
 		grtotal = 0
 		sum = 0
@@ -18,6 +19,7 @@ include Enumerable
 		end
 		(sum*100)/grtotal
 	end
+	#Devuelve el porcentaje de lipidos de los alimentos en la lista
 	def lip
                 grtotal = 0
                 sum = 0
@@ -28,6 +30,7 @@ include Enumerable
                 end
                 (sum*100)/grtotal
         end
+	#Devuelve el porcentaje de carbohidratos de los alimentos en la lista
 	def carbo   
                 grtotal = 0
                 sum = 0
@@ -38,6 +41,7 @@ include Enumerable
                 end
                 (sum*100)/grtotal
         end
+	#Devuelve el valor energetico total, siendo este la suma de todos los valores energeticos de los alimentos
 	def vct
                 grtotal = 0
                 sum = 0
@@ -47,6 +51,7 @@ include Enumerable
                 end
                 sum
         end
+	#Devuelve el plato formateado
 	def to_s
 		string = @nombre + ",Alimentos: "
 		@lista.zip(@listagr).each do |normal, gr|
@@ -54,6 +59,7 @@ include Enumerable
                 end
 		string
 	end
+	#Permite comparar platos por su valor energetico total
 	def <=> (other)
 		vct <=> other.vct
 	end
@@ -68,13 +74,13 @@ end
 class Subplato < Plato
 
 attr_reader :gei, :terreno
-
+	#Inicializa subplato usando el initialize de la clase plato
         def initialize(nombre,lista,listagr)
                 super(nombre,lista,listagr)
                 @gei = 0
 		@terreno = 0
         end
-
+	#Devuelve las emisiones de gases totales del plato
         def emisiones
                 grtotal = 0
                 sum = 0
@@ -86,6 +92,7 @@ attr_reader :gei, :terreno
                 @gei = sum
 
         end
+	#Devuelve la cantidad de terreno usado total del plato
 	def terreno
                 grtotal = 0
                 sum = 0
@@ -97,11 +104,11 @@ attr_reader :gei, :terreno
                 @terreno = sum
 
         end
-	
+	#Devuelve el subplato formateado
 	def to_s
 		string = "Gases " + @gei.to_s + " Uso de terreno anual " + @terreno.to_s
 	end
-
+	#Permite calcular la huella energetica de cada subplato
 	def huella
 		indice1 = 0
 		if vct < 670
