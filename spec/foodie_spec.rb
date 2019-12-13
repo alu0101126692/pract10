@@ -190,7 +190,9 @@ RSpec.describe Listas do
 		@platoveg2 = Subplato.new("Vegetaliana",@ingveg2,@veg2gr)
 
 		@listaveg2.insert_head_var(@platoveg2,@platoveg4)
-
+		
+		
+		@menudiet = [@platoesp,@platoesp2]
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -348,6 +350,35 @@ RSpec.describe Listas do
                         expect(@listaveg.sort).to eq([@platoveg3,@platoveg])
                 end
 
+	end
+	context "Practica 09" do
+		it "Se consigue la huella nutricional" do
+			expect(@platoesp.huella).to eq(2)
+			expect(@platoesp2.huella).to eq(1)
+			vct = 0
+			emisiones = 0
+			@menudiet.each { |n| vct += n.vct } 
+			@menudiet.each { |n| emisiones += n.emisiones }
+			 indice1 = 0
+	                if vct < 670
+        	                indice1 = 1
+
+                	elsif vct > 830
+                        	indice1 = 3
+                	else
+                        	indice1 = 2
+               		 end
+               		 indice2 = 0
+               		 if emisiones < 800
+                       		 indice2 = 1
+              		 elsif emisiones > 1200
+                       		 indice2 = 3
+               		 else
+                       		 indice2 = 2
+                	end
+               		huellanut = (indice1+indice2)/2
+ 			expect(huellanut).to eq(3)
+		end
 	end
 end	
 
