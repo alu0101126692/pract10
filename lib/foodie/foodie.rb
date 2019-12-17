@@ -1,11 +1,25 @@
+#Contiene toda la informacion nutricional y ambiental de un alimento
 class Alimentos
 	include Comparable
-		attr_reader :nombre, :gases, :terreno, :prot, :carbo, :lip, :val_en
+		#nombre del alimento
+		attr_reader :nombre 
+		#cantidad de gases emitidos en su produccion
+		attr_reader :gases
+		#cantidad de terreno usado al año por su produccion
+		attr_reader :terreno
+		#cantidad de proteinas del alimento
+		attr_reader :prot
+		#cantidad de carbohidratos del alimento
+		attr_reader :carbo
+		#cantidad de lipidos del alimento
+		attr_reader :lip
+		#valor energetico total del alimento
+		attr_reader :val_en
 		attr_writer :gases, :terreno, :prot, :carbo, :lip
 
 	#Inicializa el alimento con su nombre y sus datos
 	def initialize (nombre,prot,carbo,lip,gei,terr)
-		@nombre = nombre
+		@nombre = nombre 
 		@prot = prot
 		@carbo = carbo
 		@lip = lip

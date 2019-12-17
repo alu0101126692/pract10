@@ -1,5 +1,9 @@
-class Listas                
-attr_reader :head, :tail
+#Permite crear listas
+class Listas
+#La cabeza de la lista (el extremo de la derecha)                
+attr_reader :head
+#La cola de la lista (el extremo de la izquierda)
+attr_reader :tail
 include Enumerable 
 Node = Struct.new(:value, :next, :prev)
 	#Inicializa la lista con la head y la tail en nil

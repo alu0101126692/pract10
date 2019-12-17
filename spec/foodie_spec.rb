@@ -373,8 +373,8 @@ RSpec.describe Listas do
 			expect(@platoesp2.huella).to eq(1)
 			vct = 0
 			emisiones = 0
-			@menudiet.each { |n| vct += n.vct } 
-			@menudiet.each { |n| emisiones += n.emisiones }
+			@menudiet.map { |n| vct += n.vct } 
+			@menudiet.map { |n| emisiones += n.emisiones }
 			 indice1 = 0
 	                if vct < 670
         	                indice1 = 1

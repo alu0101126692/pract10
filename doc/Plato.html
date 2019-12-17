@@ -117,6 +117,8 @@
 
   <section class="description">
     
+<p><a href="Plato.html"><code>Plato</code></a> que contiene ingredientes</p>
+
   </section>
 
   
@@ -142,7 +144,7 @@
 
         <div class="method-description">
         
-        
+        <p>Lista que contiene los platos</p>
         
         </div>
       </div>
@@ -155,7 +157,7 @@
 
         <div class="method-description">
         
-        
+        <p>Lista que contiene los gramos de cada plato</p>
         
         </div>
       </div>
@@ -168,7 +170,7 @@
 
         <div class="method-description">
         
-        
+        <p>Nombre de la lista</p>
         
         </div>
       </div>
@@ -202,7 +204,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 6</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">lista</span>,<span class="ruby-identifier">listagr</span>) 
         <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
         <span class="ruby-ivar">@lista</span> = <span class="ruby-identifier">lista</span>
@@ -245,7 +247,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 63</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">vct</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">vct</span>
 <span class="ruby-keyword">end</span></pre>
@@ -278,7 +280,7 @@
 
           
           <div class="method-source-code" id="carbo-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 34</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">carbo</span>   
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
@@ -318,7 +320,7 @@
 
           
           <div class="method-source-code" id="lip-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lip</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
@@ -358,7 +360,7 @@
 
           
           <div class="method-source-code" id="prot-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 12</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prot</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
@@ -398,7 +400,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-identifier">string</span> = <span class="ruby-ivar">@nombre</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;,Alimentos: &quot;</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
@@ -435,7 +437,7 @@
 
           
           <div class="method-source-code" id="vct-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 45</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">vct</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>

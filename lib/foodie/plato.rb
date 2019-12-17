@@ -1,7 +1,13 @@
+#Plato que contiene ingredientes
 class Plato
 include Comparable
 include Enumerable
-	attr_reader :nombre, :lista, :listagr
+	#Nombre de la lista
+	attr_reader :nombre
+	#Lista que contiene los platos
+	attr_reader :lista
+	#Lista que contiene los gramos de cada plato
+	attr_reader :listagr
 	#Inicializa el plato con tres argumentos: El nombre del plato, la lista de alimentos y la lista del peso de estos alimentos
 	def initialize (nombre,lista,listagr) 
 		@nombre = nombre
@@ -70,10 +76,12 @@ include Enumerable
 
 end
 
-
+#Clase que hereda de plato y especifica los gases usados y el terreno
 class Subplato < Plato
-
-attr_reader :gei, :terreno
+#Cantidad de gases emitidos por todos los ingredientes del plato
+attr_reader :gei
+#Cantidad de terreno usado por todos los ingredientes del plato
+attr_reader :terreno
 	#Inicializa subplato usando el initialize de la clase plato
         def initialize(nombre,lista,listagr)
                 super(nombre,lista,listagr)
