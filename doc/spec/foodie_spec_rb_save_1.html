@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>foodie_spec.rb.save.1 - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../bin/setup.html">setup</a>
+  
+    <li><a href="../spec/foodie_spec_rb_save.html">foodie_spec.rb.save</a>
+  
+    <li><a href="../spec/foodie_spec_rb_save_1.html">foodie_spec.rb.save.1</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page spec/foodie_spec.rb.save.1">
+
+<p>RSpec.describe <a href="../Foodie.html"><code>Foodie</code></a> do</p>
+
+<pre class="ruby"><span class="ruby-identifier">before</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@vaquita</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Carne de vaca&quot;</span>,<span class="ruby-value">21.0</span>,<span class="ruby-value">0.0</span>,<span class="ruby-value">3.1</span>,<span class="ruby-value">50.0</span>,<span class="ruby-value">164.0</span>)
+        <span class="ruby-ivar">@huevos</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Huevos&quot;</span>,<span class="ruby-value">13.0</span>,<span class="ruby-value">1.1</span>,<span class="ruby-value">11</span>,<span class="ruby-value">4.2</span>,<span class="ruby-value">5.7</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Existe un metodo para obtener el nombre del Alimento&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">nombre</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;Carne de vaca&quot;</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se ha podido introducir la cantidad de gases&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">gases</span> = <span class="ruby-value">50.0</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se puede obtener la cantidad de gases&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">gases</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">50.0</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se ha podido introducir la cantidad de terreno usado&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">terreno</span> = <span class="ruby-value">164.0</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se puede obtener la cantidad de terreno usado&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">terreno</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">164.0</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end RSpec.describe <a href="../Listas.html"><code>Listas</code></a> do </p>
+
+<pre class="ruby"><span class="ruby-identifier">before</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@lista</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@lista2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@lista3</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@lista4</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@vaquita</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Carne de vaca&quot;</span>,<span class="ruby-value">21.0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">3.1</span>,<span class="ruby-value">50.0</span>,<span class="ruby-value">164.0</span>)
+        <span class="ruby-ivar">@huevos</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Huevos&quot;</span>,<span class="ruby-value">13.0</span>,<span class="ruby-value">1.1</span>,<span class="ruby-value">11</span>,<span class="ruby-value">4.2</span>,<span class="ruby-value">5.7</span>)
+        <span class="ruby-ivar">@cordero</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Cordero&quot;</span>,<span class="ruby-value">18.0</span>,<span class="ruby-value">0.0</span>,<span class="ruby-value">17.0</span>,<span class="ruby-value">20.0</span>,<span class="ruby-value">185.0</span>)
+        <span class="ruby-ivar">@camarones</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Camarones&quot;</span>,<span class="ruby-value">17.6</span>,<span class="ruby-value">1.5</span>,<span class="ruby-value">0.6</span>,<span class="ruby-value">18.0</span>,<span class="ruby-value">2.0</span>)
+        <span class="ruby-ivar">@leche</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Leche&quot;</span>,<span class="ruby-value">3.3</span>,<span class="ruby-value">4.8</span>,<span class="ruby-value">3.2</span>,<span class="ruby-value">3.2</span>,<span class="ruby-value">8.9</span>)
+        <span class="ruby-ivar">@chocolate</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Chocolate&quot;</span>,<span class="ruby-value">5.3</span>,<span class="ruby-value">47.0</span>,<span class="ruby-value">30.0</span>,<span class="ruby-value">2.3</span>,<span class="ruby-value">3.4</span>)
+        <span class="ruby-ivar">@lentejas</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Lentejas&quot;</span>,<span class="ruby-value">23.5</span>,<span class="ruby-value">52.0</span>,<span class="ruby-value">1.4</span>,<span class="ruby-value">0.4</span>,<span class="ruby-value">3.4</span>)
+        <span class="ruby-ivar">@cerdo</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Cerdo&quot;</span>,<span class="ruby-value">21.5</span>,<span class="ruby-value">0.0</span>,<span class="ruby-value">6.3</span>,<span class="ruby-value">7.6</span>,<span class="ruby-value">11.0</span>)
+        <span class="ruby-ivar">@queso</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Queso&quot;</span>,<span class="ruby-value">25.0</span>,<span class="ruby-value">1.3</span>,<span class="ruby-value">33.0</span>,<span class="ruby-value">11.0</span>,<span class="ruby-value">41.0</span>)
+        <span class="ruby-ivar">@cafe</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Cafe&quot;</span>,<span class="ruby-value">0.1</span>,<span class="ruby-value">0.0</span>,<span class="ruby-value">0.0</span>,<span class="ruby-value">0.4</span>,<span class="ruby-value">0.3</span>)
+        <span class="ruby-ivar">@nuez</span> = <span class="ruby-constant">Alimentos</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Nuez&quot;</span>,<span class="ruby-value">20.0</span>,<span class="ruby-value">21.0</span>,<span class="ruby-value">54.0</span>,<span class="ruby-value">0.3</span>,<span class="ruby-value">7.9</span>)
+        <span class="ruby-ivar">@esp</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@leche</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@cerdo</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@leche</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@cerdo</span>)
+        <span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@queso</span>)
+
+        <span class="ruby-ivar">@vas</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cordero</span>,<span class="ruby-ivar">@cerdo</span>)
+
+        <span class="ruby-ivar">@veg</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@leche</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cafe</span>,<span class="ruby-ivar">@nuez</span>)
+        <span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@queso</span>)
+
+        <span class="ruby-ivar">@veg2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@chocolate</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cafe</span>,<span class="ruby-ivar">@nuez</span>)
+
+        <span class="ruby-ivar">@carne</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@cordero</span>)
+        <span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@cerdo</span>)
+        <span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@lentejas</span>)
+        <span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cafe</span>,<span class="ruby-ivar">@nuez</span>)
+        <span class="ruby-ivar">@chocolate</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@huevos</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@vaquita</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@queso</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@nuez</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@cafe</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@cerdo</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@lentejas</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@leche</span>.<span class="ruby-identifier">cval_en</span>()
+        <span class="ruby-ivar">@cordero</span>.<span class="ruby-identifier">cval_en</span>()
+
+        <span class="ruby-ivar">@enum</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@cafe</span>)
+        <span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">insert_head</span>(<span class="ruby-ivar">@nuez</span>)
+
+        <span class="ruby-ivar">@listp</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@listp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@nuez</span>)
+        <span class="ruby-ivar">@listgr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@listgr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">2500</span>,<span class="ruby-value">1000</span>)
+        <span class="ruby-ivar">@plato1</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;plato1&quot;</span>,<span class="ruby-ivar">@listp</span>,<span class="ruby-ivar">@listgr</span>)
+        <span class="ruby-ivar">@subplato</span> = <span class="ruby-constant">Subplato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;plato1&quot;</span>,<span class="ruby-ivar">@listp</span>,<span class="ruby-ivar">@listgr</span>)
+
+        <span class="ruby-ivar">@ingesp</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingesp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@queso</span>)
+        <span class="ruby-ivar">@ingesp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@espgr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@espgr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">500</span>,<span class="ruby-value">200</span>)
+        <span class="ruby-ivar">@espgr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">250</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoesp</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Española&quot;</span>,<span class="ruby-ivar">@ingesp</span>,<span class="ruby-ivar">@espgr</span>)
+
+        <span class="ruby-ivar">@ingvas</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingvas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@ingvas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@vasgr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@vasgr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">400</span>,<span class="ruby-value">350</span>)
+        <span class="ruby-ivar">@vasgr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platovas</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vasca&quot;</span>,<span class="ruby-ivar">@ingvas</span>,<span class="ruby-ivar">@vasgr</span>)
+
+        <span class="ruby-ivar">@ingveg</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@huevos</span>,<span class="ruby-ivar">@queso</span>)
+        <span class="ruby-ivar">@ingveg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@nuez</span>,<span class="ruby-ivar">@cafe</span>)
+        <span class="ruby-ivar">@veggr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veggr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">200</span>,<span class="ruby-value">200</span>)
+        <span class="ruby-ivar">@veggr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoveg</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vegetaria&quot;</span>,<span class="ruby-ivar">@ingveg</span>,<span class="ruby-ivar">@veggr</span>)
+
+        <span class="ruby-ivar">@ingveg2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@ingveg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@nuez</span>,<span class="ruby-ivar">@cafe</span>)
+        <span class="ruby-ivar">@veg2gr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veg2gr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">200</span>,<span class="ruby-value">150</span>)
+        <span class="ruby-ivar">@veg2gr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoveg2</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vegetaliana&quot;</span>,<span class="ruby-ivar">@ingveg2</span>,<span class="ruby-ivar">@veg2gr</span>)
+
+        <span class="ruby-ivar">@ingcar</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingcar</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@cordero</span>)
+        <span class="ruby-ivar">@ingcar</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@cargr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@cargr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">250</span>,<span class="ruby-value">200</span>)
+        <span class="ruby-ivar">@cargr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platocar</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Carne&quot;</span>,<span class="ruby-ivar">@ingcar</span>,<span class="ruby-ivar">@cargr</span>)
+
+        <span class="ruby-ivar">@listaesp</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingesp2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingesp2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@cerdo</span>)
+        <span class="ruby-ivar">@ingesp2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@espgr2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@espgr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">500</span>,<span class="ruby-value">200</span>)
+        <span class="ruby-ivar">@espgr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">250</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoesp2</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Española&quot;</span>,<span class="ruby-ivar">@ingesp</span>,<span class="ruby-ivar">@espgr2</span>)
+
+        <span class="ruby-ivar">@listaesp</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@platoesp</span>,<span class="ruby-ivar">@platoesp2</span>)
+
+        <span class="ruby-ivar">@listavas</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingvas2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingvas2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@cerdo</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@ingvas2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@leche</span>)
+        <span class="ruby-ivar">@vasgr2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@vasgr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">400</span>,<span class="ruby-value">350</span>)
+        <span class="ruby-ivar">@vasgr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platovas2</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vasca&quot;</span>,<span class="ruby-ivar">@ingvas2</span>,<span class="ruby-ivar">@vasgr2</span>)
+        <span class="ruby-ivar">@listavas</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@platovas</span>,<span class="ruby-ivar">@platovas2</span>)
+        <span class="ruby-ivar">@listaveg</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@huevos</span>,<span class="ruby-ivar">@queso</span>)
+        <span class="ruby-ivar">@ingveg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@cafe</span>)
+        <span class="ruby-ivar">@veggr2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veggr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">200</span>,<span class="ruby-value">200</span>)
+        <span class="ruby-ivar">@veggr2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoveg3</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vegetaria&quot;</span>,<span class="ruby-ivar">@ingveg2</span>,<span class="ruby-ivar">@veggr2</span>)
+
+        <span class="ruby-ivar">@listaveg</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@platoveg</span>,<span class="ruby-ivar">@platoveg3</span>) 
+        <span class="ruby-ivar">@listaveg2</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg4</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ingveg4</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@lentejas</span>,<span class="ruby-ivar">@chocolate</span>)
+        <span class="ruby-ivar">@ingveg4</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@nuez</span>,<span class="ruby-ivar">@cafe</span>)
+        <span class="ruby-ivar">@veg4gr</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@veg4gr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">200</span>,<span class="ruby-value">150</span>)
+        <span class="ruby-ivar">@veg4gr</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-value">100</span>,<span class="ruby-value">100</span>)
+        <span class="ruby-ivar">@platoveg2</span> = <span class="ruby-constant">Plato</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Vegetaliana&quot;</span>,<span class="ruby-ivar">@ingveg2</span>,<span class="ruby-ivar">@veg2gr</span>)
+
+        <span class="ruby-ivar">@listaveg2</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@platoveg2</span>,<span class="ruby-ivar">@platoveg4</span>)
+
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Existe nodo de la lista con sus datos, su siguiente y su previo&quot;</span> <span class="ruby-keyword">do</span>
+
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Debe existir una Lista con su cabeza y su cola&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">head</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">tail</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se puede insertar un elemento en la lista&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">insert_head</span>(<span class="ruby-ivar">@vaquita</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@vaquita</span>)
+        <span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">insert_tail</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">insert_tail</span>(<span class="ruby-ivar">@vaquita</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@vaquita</span>)
+        <span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">insert_head</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@camarones</span>)                     
+<span class="ruby-keyword">end</span>     
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se pueden insertar varios elementos&quot;</span> <span class="ruby-keyword">do</span>
+
+        <span class="ruby-ivar">@lista3</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista3</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista3</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@vaquita</span>)
+        <span class="ruby-ivar">@lista4</span>.<span class="ruby-identifier">insert_tail_var</span>(<span class="ruby-ivar">@cordero</span>,<span class="ruby-ivar">@huevos</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista4</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@huevos</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista4</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@cordero</span>)
+
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se extrae el ultimo elemento de la Lista&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@lista5</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@lista5</span>.<span class="ruby-identifier">insert_head_var</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista5</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-ivar">@lista5</span>.<span class="ruby-identifier">pop_head</span>()
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista5</span>.<span class="ruby-identifier">head</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@vaquita</span>)
+<span class="ruby-keyword">end</span> 
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se extrae el primer elemento de la lista&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@lista6</span> = <span class="ruby-constant">Listas</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@lista6</span>.<span class="ruby-identifier">insert_tail_var</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista6</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@camarones</span>)
+        <span class="ruby-ivar">@lista6</span>.<span class="ruby-identifier">pop_tail</span>()
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista6</span>.<span class="ruby-identifier">tail</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@vaquita</span>)
+
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Crear expectativas para estimar emisiones de gases diarias de cada lista&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">76</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">38</span>) 
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">34</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">11</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">87</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Crear expectativas para estimar emisiones de gases anuales de cada dieta&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span><span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">27740</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span><span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">13870</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span><span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">12410</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span><span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">4015</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">gei</span>.<span class="ruby-identifier">round</span><span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">31755</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Crear expectativas para estimar uso de terreno anual de cada dieta&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@esp</span>.<span class="ruby-identifier">terr</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">189</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vas</span>.<span class="ruby-identifier">terr</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">216</span>) 
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg</span>.<span class="ruby-identifier">terr</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">122</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@veg2</span>.<span class="ruby-identifier">terr</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">29</span>)
+        <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@carne</span>.<span class="ruby-identifier">terr</span>.<span class="ruby-identifier">round</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">386</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Comparaciones&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Utilizar modulo Comparable para comparar la eficencia energetica&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vaquita</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@huevos</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">false</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Comparar info ambiental y nutricional&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@vaquita</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@huevos</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span> (<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@huevos</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@huevos</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span> (<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@huevos</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@chocolate</span>)).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@huevos</span>.<span class="ruby-identifier">clamp</span>(<span class="ruby-ivar">@vaquita</span>,<span class="ruby-ivar">@chocolate</span>)).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@huevos</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Enumerable&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Enumerar listas de alimentos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> }).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>([<span class="ruby-ivar">@nuez</span>,<span class="ruby-ivar">@cafe</span>,<span class="ruby-ivar">@queso</span>])
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@cafe</span> }).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span> ([<span class="ruby-ivar">@nuez</span>,<span class="ruby-ivar">@queso</span>])
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">max</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@nuez</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">min</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@cafe</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@enum</span>.<span class="ruby-identifier">sort</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>([<span class="ruby-ivar">@cafe</span>,<span class="ruby-ivar">@queso</span>,<span class="ruby-ivar">@nuez</span>])
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Plato&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Obteniendo el nombre de un plato&quot;</span> <span class="ruby-keyword">do</span>        
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">nombre</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;plato1&quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Existe un conjunto de alimentos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">lista</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@listp</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Existe un conjunto de cantidades alimentos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">listagr</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@listgr</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Porcentaje de proteinas del conjunto de alimentos&quot;</span> <span class="ruby-keyword">do</span>
+
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">prot</span>.<span class="ruby-identifier">round</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Porcentaje de lipidos del conjunto de alimentos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">lip</span>.<span class="ruby-identifier">round</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">4</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Porcentaje de lipidos del conjunto de alimentos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">carbo</span>.<span class="ruby-identifier">round</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Valor calorico total en kilocalorias&quot;</span> <span class="ruby-keyword">do</span>
+
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">vct</span>.<span class="ruby-identifier">round</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1656</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Se obtiene el plato formateado&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">to_s</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;plato1,Alimentos: Nuez 1000 gr Queso 2500 gr &quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Comparable&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@platoesp</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@platoveg</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@platovas</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@platovas</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@platoesp</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-ivar">@platoveg2</span>,<span class="ruby-ivar">@platocar</span>)).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">false</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@platocar</span>.<span class="ruby-identifier">clamp</span>(<span class="ruby-ivar">@platoveg2</span>,<span class="ruby-ivar">@platoesp</span>)).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@platoveg2</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Enumerar listas de platos&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@listaesp</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> }).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>([<span class="ruby-ivar">@platoesp2</span>,<span class="ruby-ivar">@platoesp</span>])
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@listavas</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@platovas</span> }).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span> ([])
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@listaveg</span>.<span class="ruby-identifier">max</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@platoveg</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@listaveg</span>.<span class="ruby-identifier">min</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-ivar">@platoveg3</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@listaveg</span>.<span class="ruby-identifier">sort</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>([<span class="ruby-ivar">@platoveg3</span>,<span class="ruby-ivar">@platoveg</span>])
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Subclase que hereda de plato&quot;</span> <span class="ruby-keyword">do</span>
+
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Emisiones de gases diarias&quot;</span> <span class="ruby-keyword">do</span>
+
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">emisiones</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">27.8</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Uso de terreno&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">terreno</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">110.4</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Eficencia energetica&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">to_s</span>()).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;Gases 27.8 Uso de terreno anual 110.4&quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Clase de un objeto&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">class</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-constant">Subplato</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">class</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-constant">Plato</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">Plato</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">false</span>)
+
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Jerarqia de un objeto&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Plato</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+
+        <span class="ruby-keyword">end</span>             
+        <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Tipo de un objeto&quot;</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@subplato</span>.<span class="ruby-identifier">respond_to?</span><span class="ruby-value">:terreno</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+                <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@plato1</span>.<span class="ruby-identifier">respond_to?</span><span class="ruby-value">:nombre</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-keyword">true</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end  </p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
