@@ -18,6 +18,10 @@ include Enumerable
 	def prot
 		grtotal = 0
 		sum = 0
+		#itera en las dos listas a la vez para poder calcular las
+		#proteinas dependiendo de la cantidad y tambien suma
+		#todas las cantidades para poder calcular el porcentaje
+		#despues
 		@lista.zip(@listagr).each do |normal, gr|
 			grtotal += gr
 			cant = gr/1000.0
@@ -29,6 +33,10 @@ include Enumerable
 	def lip
                 grtotal = 0
                 sum = 0
+		#itera en las dos listas a la vez para poder calcular las     
+                #lipidos dependiendo de la cantidad y tambien suma
+                #todas las cantidades para poder calcular el porcentaje
+                #despues
                 @lista.zip(@listagr).each do |normal, gr|
                         grtotal += gr
                         cant = gr/1000.0
@@ -40,6 +48,10 @@ include Enumerable
 	def carbo   
                 grtotal = 0
                 sum = 0
+		#itera en las dos listas a la vez para poder calcular las     
+                #cabrohidratos dependiendo de la cantidad y tambien suma
+                #todas las cantidades para poder calcular el porcentaje
+                #despues
                 @lista.zip(@listagr).each do |normal, gr|
                         grtotal += gr
                         cant = gr/1000.0
@@ -51,6 +63,8 @@ include Enumerable
 	def vct
                 grtotal = 0
                 sum = 0
+		#recorre las dos listas a la vez para sacar el valor
+		#nutricional de cada ingrediente segun el peso de este
                 @lista.zip(@listagr).each do |normal, gr|
                         cant = gr/1000.0
                         sum += normal.val_en*cant
@@ -92,7 +106,8 @@ attr_reader :terreno
         def emisiones
                 grtotal = 0
                 sum = 0
-		
+		#recorre las dos listas a la vez para sacar los gases emitidos
+		# de cada ingrediente segun el peso de este
                 @lista.zip(@listagr).each do |normal, gr|
                         cant = gr/1000.0
                         sum += normal.gases*cant
@@ -104,7 +119,8 @@ attr_reader :terreno
 	def terreno
                 grtotal = 0
                 sum = 0
-
+		#recorre las dos listas a la vez para sacar el terreno
+                #usado de cada ingrediente segun el peso de este
                 @lista.zip(@listagr).each do |normal, gr|
                         cant = gr/1000.0
                         sum += normal.terreno*cant
@@ -119,6 +135,7 @@ attr_reader :terreno
 	#Permite calcular la huella energetica de cada subplato
 	def huella
 		indice1 = 0
+		#dependiendo del vct de cada ingrediente, se le pone un indice
 		if vct < 670
 			indice1 = 1
 			
@@ -128,6 +145,8 @@ attr_reader :terreno
 			indice1 = 2
 		end 
 		indice2 = 0
+		#dependiendo de los gases emitidos de cada ingrediente, 
+		#se le pone un indice
 		if emisiones < 800
 			indice2 = 1
 		elsif emisiones > 1200
@@ -135,6 +154,7 @@ attr_reader :terreno
 		else 
 			indice2 = 2
 		end
+		#hace la media de los indices sacados
 		indiceres = (indice1+indice2)/2
 		
 

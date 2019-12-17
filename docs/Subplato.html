@@ -175,7 +175,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 86</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">lista</span>,<span class="ruby-identifier">listagr</span>)
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">lista</span>,<span class="ruby-identifier">listagr</span>)
         <span class="ruby-ivar">@gei</span> = <span class="ruby-value">0</span>
@@ -218,11 +218,12 @@
 
           
           <div class="method-source-code" id="emisiones-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">emisiones</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
-        
+        <span class="ruby-comment">#recorre las dos listas a la vez para sacar los gases emitidos</span>
+        <span class="ruby-comment"># de cada ingrediente segun el peso de este</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">cant</span> = <span class="ruby-identifier">gr</span><span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
                 <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">normal</span>.<span class="ruby-identifier">gases</span><span class="ruby-operator">*</span><span class="ruby-identifier">cant</span>
@@ -259,9 +260,10 @@
 
           
           <div class="method-source-code" id="huella-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 120</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">huella</span>
         <span class="ruby-identifier">indice1</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#dependiendo del vct de cada ingrediente, se le pone un indice</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">vct</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">670</span>
                 <span class="ruby-identifier">indice1</span> = <span class="ruby-value">1</span>
                 
@@ -271,6 +273,8 @@
                 <span class="ruby-identifier">indice1</span> = <span class="ruby-value">2</span>
         <span class="ruby-keyword">end</span> 
         <span class="ruby-identifier">indice2</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#dependiendo de los gases emitidos de cada ingrediente,</span>
+        <span class="ruby-comment">#se le pone un indice</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">emisiones</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">800</span>
                 <span class="ruby-identifier">indice2</span> = <span class="ruby-value">1</span>
         <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">emisiones</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1200</span>
@@ -278,6 +282,7 @@
         <span class="ruby-keyword">else</span> 
                 <span class="ruby-identifier">indice2</span> = <span class="ruby-value">2</span>
         <span class="ruby-keyword">end</span>
+        <span class="ruby-comment">#hace la media de los indices sacados</span>
         <span class="ruby-identifier">indiceres</span> = (<span class="ruby-identifier">indice1</span><span class="ruby-operator">+</span><span class="ruby-identifier">indice2</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>
         
 
@@ -311,7 +316,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-identifier">string</span> = <span class="ruby-string">&quot;Gases &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@gei</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; Uso de terreno anual &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@terreno</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>

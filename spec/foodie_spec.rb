@@ -4,8 +4,7 @@ RSpec.describe Foodie do
   	before(:all) do
     		@vaquita = Alimentos.new("Carne de vaca",21.0,0.0,3.1,50.0,164.0)
   		@huevos = Alimentos.new("Huevos",13.0,1.1,11,4.2,5.7)
-	end
-  
+	end 
   	it "Existe un metodo para obtener el nombre del Alimento" do
   		expect(@vaquita.nombre).to eq("Carne de vaca")
 	end

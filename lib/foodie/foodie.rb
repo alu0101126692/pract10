@@ -36,11 +36,13 @@ class Alimentos
 	        kcalc = carbo * 4
 		kcalp = prot * 4
 		kcall = lip * 9
+		#multiplica los gramos por su valor calorico
 		@val_en = (kcalc + kcalp + kcall).round(1)
 	
 	end
 	#Calcular el impacto ambiental de un hombre
 	def hombre(prot1,prot2,prot3,terr1,terr2,terr3,gas1,gas2,gas3)
+		#comprueba las si las proteinas son las necesarias para un hombre
 		if (prot1 + prot2 + prot3) >= 54
         	        prot_max = prot1 + prot2 + prot3
 			gases = terr1 + terr2 + terr3
@@ -51,6 +53,7 @@ class Alimentos
 	end
 	#Calcular el impacto ambiental de una mujer
 	def mujer(prot1,prot2,prot3,terr1,terr2,terr3,gas1,gas2,gas3)
+		#comprueba si las proteinas son las necesarias para una mujer
 		if (prot1 + prot2 + prot3) >= 41
 	    		prot_max = prot1 + prot2 + prot3
 			gases = terr1 + terr2 + terr3
@@ -61,6 +64,7 @@ class Alimentos
 	end
 	#Perminte comparar alimentos por su valor energetico
 	def <=>(other)
+		#el valor energetico del primero <=> el valor energetico del segundo
 		val_en <=> other.val_en
 	end
 end

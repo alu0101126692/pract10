@@ -239,7 +239,7 @@
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 95</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 110</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
       <span class="ruby-identifier">puntero</span> = <span class="ruby-ivar">@head</span>
       <span class="ruby-keyword">while</span>(<span class="ruby-identifier">puntero</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>) <span class="ruby-keyword">do</span>
@@ -276,11 +276,13 @@
 
           
           <div class="method-source-code" id="gei-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gei</span>
       <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+      <span class="ruby-comment">#crea un nodo y lo iguala a la cabeza</span>
       <span class="ruby-ivar">@node1</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
       <span class="ruby-ivar">@node1</span> = <span class="ruby-ivar">@head</span>
+      <span class="ruby-comment">#recorre la lista hasta que nodo sea cola y va sumando</span>
       <span class="ruby-keyword">until</span> <span class="ruby-ivar">@node1</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span> <span class="ruby-keyword">do</span> 
               <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@node1</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">gases</span>
               <span class="ruby-ivar">@node1</span> = <span class="ruby-ivar">@node1</span>.<span class="ruby-identifier">prev</span>
@@ -318,12 +320,16 @@
           
           <div class="method-source-code" id="insert_head-source">
             <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span>(<span class="ruby-identifier">value</span>)  
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-comment">#si la cabeza es nula la lista esta vacia, por lo que</span>
+        <span class="ruby-comment">#si añadimos un nodo, este sera cabeza y cola</span>
         <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
                 <span class="ruby-ivar">@node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
                 <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@node</span>
                 <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@node</span>
         <span class="ruby-keyword">else</span>
+        <span class="ruby-comment">#si no esta vacia, hay que hacer que la cabeza anterior tenga</span>
+        <span class="ruby-comment">#como siguiente el nodo nuevo</span>
                  <span class="ruby-ivar">@node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-ivar">@head</span>)
                  <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">next</span> = <span class="ruby-ivar">@node</span> 
                  <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@node</span>
@@ -358,8 +364,9 @@
 
           
           <div class="method-source-code" id="insert_head_var-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head_var</span>(<span class="ruby-identifier">value</span>,<span class="ruby-identifier">value2</span>)
+      <span class="ruby-comment">#usa insert head 2 veces</span>
       <span class="ruby-identifier">insert_head</span>(<span class="ruby-identifier">value</span>)
       <span class="ruby-identifier">insert_head</span>(<span class="ruby-identifier">value2</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -392,13 +399,16 @@
 
           
           <div class="method-source-code" id="insert_tail-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 28</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail</span>(<span class="ruby-identifier">value</span>)  
+        <span class="ruby-comment">#si la lista esta vacia</span>
         <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@tail</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
                 <span class="ruby-ivar">@node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
                 <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@node</span>
                 <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@node</span>
         <span class="ruby-keyword">else</span>
+        <span class="ruby-comment">#si la lista no esta vacia, la cola previa tendra como</span>
+        <span class="ruby-comment">#anterior el nuevo nodo</span>
                  <span class="ruby-ivar">@node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>,<span class="ruby-ivar">@tail</span>,<span class="ruby-keyword">nil</span>)
                  <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-ivar">@node</span> 
                  <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@node</span>
@@ -433,8 +443,9 @@
 
           
           <div class="method-source-code" id="insert_tail_var-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 44</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail_var</span>(<span class="ruby-identifier">value</span>,<span class="ruby-identifier">value2</span>)
+      <span class="ruby-comment">#usa insert tail dos veces</span>
       <span class="ruby-identifier">insert_tail</span>(<span class="ruby-identifier">value</span>)
       <span class="ruby-identifier">insert_tail</span>(<span class="ruby-identifier">value2</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -467,13 +478,14 @@
 
           
           <div class="method-source-code" id="pop_head-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_head</span>
+      <span class="ruby-comment">#si la lista esta vacia, hay que dejar a nil la cola tambien</span>
       <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>)
               <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
               <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
       <span class="ruby-keyword">else</span>
-              
+      <span class="ruby-comment">#si la lista no esta vacia</span>
               <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">prev</span>
               <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">next</span> = <span class="ruby-keyword">nil</span>
       <span class="ruby-keyword">end</span>
@@ -507,13 +519,14 @@
 
           
           <div class="method-source-code" id="pop_tail-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_tail</span>
+      <span class="ruby-comment">#si la lista esta vacia</span>
       <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>)
               <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
               <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
       <span class="ruby-keyword">else</span>
-
+      <span class="ruby-comment">#si no esta vacia</span>
               <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span>
               <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-keyword">nil</span>
       <span class="ruby-keyword">end</span>
@@ -547,11 +560,13 @@
 
           
           <div class="method-source-code" id="terr-source">
-            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/foodie/listas.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">terr</span>
       <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+      <span class="ruby-comment">#crea un nodo y lo iguala a la cabeza</span>
       <span class="ruby-ivar">@node1</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
       <span class="ruby-ivar">@node1</span> = <span class="ruby-ivar">@head</span>
+      <span class="ruby-comment">#recorre la lista hasta que cabeza sea cola y va sumando</span>
       <span class="ruby-keyword">until</span> <span class="ruby-ivar">@node1</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span> <span class="ruby-keyword">do</span>
               <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@node1</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">terreno</span>
               <span class="ruby-ivar">@node1</span> = <span class="ruby-ivar">@node1</span>.<span class="ruby-identifier">prev</span>

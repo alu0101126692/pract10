@@ -247,7 +247,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">vct</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">vct</span>
 <span class="ruby-keyword">end</span></pre>
@@ -280,10 +280,14 @@
 
           
           <div class="method-source-code" id="carbo-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">carbo</span>   
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#itera en las dos listas a la vez para poder calcular las</span>
+        <span class="ruby-comment">#cabrohidratos dependiendo de la cantidad y tambien suma</span>
+        <span class="ruby-comment">#todas las cantidades para poder calcular el porcentaje</span>
+        <span class="ruby-comment">#despues</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">grtotal</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">gr</span>
                 <span class="ruby-identifier">cant</span> = <span class="ruby-identifier">gr</span><span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
@@ -320,10 +324,14 @@
 
           
           <div class="method-source-code" id="lip-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lip</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#itera en las dos listas a la vez para poder calcular las</span>
+        <span class="ruby-comment">#lipidos dependiendo de la cantidad y tambien suma</span>
+        <span class="ruby-comment">#todas las cantidades para poder calcular el porcentaje</span>
+        <span class="ruby-comment">#despues</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">grtotal</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">gr</span>
                 <span class="ruby-identifier">cant</span> = <span class="ruby-identifier">gr</span><span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
@@ -364,6 +372,10 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prot</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#itera en las dos listas a la vez para poder calcular las</span>
+        <span class="ruby-comment">#proteinas dependiendo de la cantidad y tambien suma</span>
+        <span class="ruby-comment">#todas las cantidades para poder calcular el porcentaje</span>
+        <span class="ruby-comment">#despues</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">grtotal</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">gr</span>
                 <span class="ruby-identifier">cant</span> = <span class="ruby-identifier">gr</span><span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
@@ -400,7 +412,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 61</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-identifier">string</span> = <span class="ruby-ivar">@nombre</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;,Alimentos: &quot;</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
@@ -437,10 +449,12 @@
 
           
           <div class="method-source-code" id="vct-source">
-            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/foodie/plato.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">vct</span>
         <span class="ruby-identifier">grtotal</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+        <span class="ruby-comment">#recorre las dos listas a la vez para sacar el valor</span>
+        <span class="ruby-comment">#nutricional de cada ingrediente segun el peso de este</span>
         <span class="ruby-ivar">@lista</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@listagr</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">normal</span>, <span class="ruby-identifier">gr</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">cant</span> = <span class="ruby-identifier">gr</span><span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
                 <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">normal</span>.<span class="ruby-identifier">val_en</span><span class="ruby-operator">*</span><span class="ruby-identifier">cant</span>
