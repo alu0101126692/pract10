@@ -15,7 +15,7 @@ class Alimentos
 		attr_reader :lip
 		#valor energetico total del alimento
 		attr_reader :val_en
-		attr_writer :gases, :terreno, :prot, :carbo, :lip
+		attr_writer :nombre, :gases, :terreno, :prot, :carbo, :lip
 
 	#Inicializa el alimento con su nombre y sus datos
 	def initialize (nombre,prot,carbo,lip,gei,terr)
