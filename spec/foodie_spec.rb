@@ -407,6 +407,27 @@ RSpec.describe Listas do
 
 		end
 	end
+	context "DSL" do
+		it "DSL de plato" do 
+			plato = Plato.new("Hamburguesa") do
+				nombre "Hamburguesa especial de la casa"
+				alimento :descripcion => "carne de vaca", 
+					:gramos => 100
+					:prot => 21.1, :carbo => 0.0, :lip => 3.1, :gases => 50.0, :terreno => 164.0
+				alimento :descripcion => "huevo", :gramos => 20,
+					:prot => 13.0, :carbo => 1.1, :lip => 11.0, :gases => 4.2, :terreno => 5.7 
+			end
+		end
+		it "DSL de menu" do
+			menu = Menu.new("Combinado no. 1") do
+				descripcion "hamburguesa, papas, refresco"
+				componente  :descripcion => "Hamburguesa especial de la casa",:precio => 4.25
+				componente  :descripcion => "Papas peque~nas",:precio => 1.75
+				componente  :descripcion => "Refrescos de lata",:precio => 1.50
+				precio      7.50
+			end
+		end
+	end
 end	
 
 
