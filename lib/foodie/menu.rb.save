@@ -1,0 +1,26 @@
+
+class Menu
+
+	#nombre del menu
+	attr_accessor :nombre
+	#descripcion del menu
+	attr_accesor :desc
+	#ista que contiene los platos
+	attr_accessor :listapl
+	#lista que contiene los precios
+	attr_accessor :listapr
+	#precio total
+	attr_accesor :precio
+
+	def initialize(nombre,&block)
+		nombre = nombre 
+		desc = ""
+		listapl = Listas.new()
+		lista_pr = Listas.new()
+		precio = 0
+		if block_given?
+                                                                                                                 if block.arity == 1                                                                                                             yield self                                                                                                      else                                                                                                                            instance_eval(&block)
+                        end                                                                                                             end
+	end
+	
+	def descripcion
