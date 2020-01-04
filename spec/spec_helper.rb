@@ -1,5 +1,7 @@
+require 'coveralls'
 require "bundler/setup"
 require "foodie"
+Coveralls.wear!
 
 
 RSpec.configure do |config|
