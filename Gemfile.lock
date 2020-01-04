@@ -64,6 +64,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coveralls
   bundler (~> 2.0)
   foodie!
   guard
